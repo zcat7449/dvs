@@ -1,8 +1,14 @@
 version: '3.1'
 
+networks:
+  dvs-net:
+    driver: bridge
+
 services:
   rabbitmq:
     image: 'bitnami/rabbitmq:3.7'
+    networks:
+      - dvs-net
     environment:
       - RABBITMQ_PASSWORD=rabbitdvs
     ports:
@@ -18,6 +24,8 @@ services:
     image: mysql:5.7
     container_name: mysql_dvs_5.7
     restart: always
+    networks:
+    - advs-net
     environment:
       - MYSQL_DATABASE=basedvs
       - MYSQL_ROOT_PASSWORD=uN7yH@J1IfYJ4c%3s0Mqelj0wiz
