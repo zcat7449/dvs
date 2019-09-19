@@ -25,7 +25,7 @@ services:
     container_name: mysql_dvs_5.7
     restart: always
     networks:
-    - advs-net
+    - dvs-net
     environment:
       - MYSQL_DATABASE=basedvs
       - MYSQL_ROOT_PASSWORD=uN7yH@J1IfYJ4c%3s0Mqelj0wiz
