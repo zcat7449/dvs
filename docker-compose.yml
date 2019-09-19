@@ -56,7 +56,7 @@ services:
     environment:
       - MYSQL_HOST=localhost
       - MYSQL_USER=root
-      - MYSQL_PASS=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASS=uN7yH@J1IfYJ4c%3s0Mqelj0wiz
       - MAX_BACKUPS=15
       - INIT_BACKUP=0
       # Every day at 03:00
