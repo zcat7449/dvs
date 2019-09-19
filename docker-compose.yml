@@ -52,7 +52,7 @@ services:
     volumes:
       - ${VOLUME_PATH}/backup:/backup
     environment:
-      - MYSQL_HOST=mysql_dvs_5.7
+      - MYSQL_HOST=localhost
       - MYSQL_USER=root
       - MYSQL_PASS=${MYSQL_ROOT_PASSWORD}
       - MAX_BACKUPS=15
