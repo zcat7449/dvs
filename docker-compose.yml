@@ -19,7 +19,7 @@ services:
       - '25672:25672'
       - '15672:15672'
     volumes:
-      - '/mnt/rabbitmq-persistence:/bitnami'
+      - /mnt/rabbitmq-persistence:/bitnami
 
 
   db:
