@@ -48,7 +48,7 @@ services:
   mysql-cron-backup:
     image: fradelg/mysql-cron-backup
     depends_on:
-      - mysql:5.7
+      - mysql
     volumes:
       - ${VOLUME_PATH}/backup:/backup
     environment:
