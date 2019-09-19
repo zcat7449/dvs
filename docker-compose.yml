@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  rabbitmq:
+    image: 'bitnami/rabbitmq:3.7'
+    environment:
+      - RABBITMQ_PASSWORD=rabbitdvs
+    ports:
+      - '4369:4369'
+      - '5672:5672'
+      - '25672:25672'
+      - '15672:15672'
+    volumes:
+      - '/mnt/rabbitmq-persistence:/bitnami'
+
+
+  db:
+    image: mysql:5.7
+    container_name: mysql_dvs_5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=basedvs
+      - MYSQL_ROOT_PASSWORD=uN7yH@J1IfYJ4c%3s0Mqelj0wiz
+      - MYSQL_USER=dvssqluser
+      - MYSQL_PASSWORD=dvspassuser2019
+    healthcheck:
+      test: ["CMD", "/usr/bin/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - /mnt/data:/var/lib/mysql
+      - /mnt/backup:/var/lib/backup
+    ports:
+      - "3306:3306"
