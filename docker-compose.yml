@@ -49,6 +49,8 @@ services:
     image: fradelg/mysql-cron-backup
     depends_on:
       - db
+    networks:
+    - dvs-net
     volumes:
       - ${VOLUME_PATH}/backup:/backup
     environment:
