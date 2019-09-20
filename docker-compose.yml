@@ -41,7 +41,7 @@ services:
       retries: 5
     volumes:
       - /mnt/data:/var/lib/mysql
-      - /mnt/backup:/var/lib/backup
+#      - /mnt/backup:/var/lib/backup
     ports:
       - "3306:3306"
 
