@@ -59,8 +59,8 @@ services:
       - MYSQL_PASS=uN7yH@J1IfYJ4c%3s0Mqelj0wiz
       - MAX_BACKUPS=15
       - INIT_BACKUP=0
-      # Every day at 05:00
-      - CRON_TIME=0 5 * * *
+      # Every day at 05:10
+      - CRON_TIME=10 5 * * *
     restart: unless-stopped
 
 volumes:
