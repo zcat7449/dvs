@@ -52,7 +52,7 @@ services:
     networks:
     - dvs-net
     volumes:
-      - ${VOLUME_PATH}/backup:/backup
+      - /mnt/backup:/backup
     environment:
       - MYSQL_HOST=localhost
       - MYSQL_USER=root
