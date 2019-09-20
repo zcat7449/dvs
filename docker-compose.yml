@@ -1,16 +1,16 @@
 version: '3.1'
 
-networks:
-  dvs-net:
-    driver: bridge
+#networks:
+#  dvs-net:
+#    driver: bridge
 
 services:
   
   rabbitmq:
     container_name: dvs_rabbitmq
     image: 'bitnami/rabbitmq:3.7'
-    networks:
-      - dvs-net
+#    networks:
+#      - dvs-net
     environment:
       - RABBITMQ_PASSWORD=rabbitdvs
     restart: unless-stopped
@@ -27,8 +27,8 @@ services:
     image: mysql:5.7
     container_name: mysql_dvs_5.7
     restart: always
-    networks:
-    - dvs-net
+#    networks:
+#    - dvs-net
     environment:
       - MYSQL_DATABASE=basedvs
       - MYSQL_ROOT_PASSWORD=uN7yH@J1IfYJ4c%3s0Mqelj0wiz
@@ -49,8 +49,8 @@ services:
     image: fradelg/mysql-cron-backup
     depends_on:
       - db
-    networks:
-    - dvs-net
+#    networks:
+#    - dvs-net
     volumes:
       - /mnt/backup:/backup
     environment:
