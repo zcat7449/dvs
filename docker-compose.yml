@@ -12,6 +12,7 @@ services:
     networks:
       - dvs-net
     environment:
+#     - RABBITMQ_USERNAME=user
       - RABBITMQ_PASSWORD=rabbitdvs
     restart: unless-stopped
     ports:
